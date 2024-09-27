@@ -91,12 +91,12 @@ local theme = lush(function(injected_functions)
     -- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line
     -- CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line
     -- MatchParen     { }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    -- ModeMsg        { }, -- 'showmode' message (e.g., "-- INSERT -- ")
-    -- MsgArea        { }, -- Area for messages and cmdline
+    ModeMsg        {bg=hsl("#13c230"), fg=hsl("#000000")}, -- 'showmode' message (e.g., "-- INSERT -- ")
+    MsgArea        {bg=hsl("#000000"),fg=hsl("#ffffff") }, -- Area for messages and cmdline
     -- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg        { }, -- |more-prompt|
     -- NonText        { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    -- Normal         { }, -- Normal text
+    Normal         {bg=hsl("#000000"),fg=hsl("#ffffff")}, -- Normal text
     -- NormalFloat    { }, -- Normal text in floating windows.
     -- FloatBorder    { }, -- Border of floating windows.
     -- FloatTitle     { }, -- Title of floating windows.
@@ -143,14 +143,14 @@ local theme = lush(function(injected_functions)
     -- Comment        { }, -- Any comment
 
     -- Constant       { }, -- (*) Any constant
-    -- String         { }, --   A string constant: "this is a string"
-    -- Character      { }, --   A character constant: 'c', '\n'
-    -- Number         { }, --   A number constant: 234, 0xff
-    -- Boolean        { }, --   A boolean constant: TRUE, false
+    String         {fg=hsl("#13c230")}, --   A string constant: "this is a string"
+    Character      {fg=hsl("#fa3c0f") }, --   A character constant: 'c', '\n'
+    Number         {fg=hsl("#7717ed") }, --   A number constant: 234, 0xff
+    Boolean        {fg=hsl("#04086c") }, --   A boolean constant: TRUE, false
     -- Float          { }, --   A floating point constant: 2.3e10
 
-    -- Identifier     { }, -- (*) Any variable name
-    -- Function       { }, --   Function name (also: methods for classes)
+    Identifier     {fg=hsl("#3dd8ff") }, -- (*) Any variable name
+    Function       {fg=hsl("#09c9ff") }, --   Function name (also: methods for classes)
 
     -- Statement      { }, -- (*) Any statement
     -- Conditional    { }, --   if, then, else, endif, switch, etc.
@@ -160,13 +160,13 @@ local theme = lush(function(injected_functions)
     -- Keyword        { }, --   any other keyword
     -- Exception      { }, --   try, catch, throw
 
-    -- PreProc        { }, -- (*) Generic Preprocessor
+    PreProc        {fg=hsl("#fa3c0f")}, -- (*) Generic Preprocessor
     -- Include        { }, --   Preprocessor #include
     -- Define         { }, --   Preprocessor #define
     -- Macro          { }, --   Same as Define
     -- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-    -- Type           { }, -- (*) int, long, char, etc.
+    Type           {fg=hsl("#fa6339") }, -- (*) int, long, char, etc.
     -- StorageClass   { }, --   static, register, volatile, etc.
     -- Structure      { }, --   struct, union, enum, etc.
     -- Typedef        { }, --   A typedef
