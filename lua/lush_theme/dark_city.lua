@@ -84,7 +84,7 @@ local theme = lush(function(injected_functions)
     -- SignColumn     { }, -- Column where |signs| are displayed
     -- IncSearch      { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute     { }, -- |:substitute| replacement text highlighting
-    -- LineNr         { }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr         {bg=hsl("#080637")}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNrAbove    { }, -- Line number for when the 'relativenumber' option is set, above the cursor line
     -- LineNrBelow    { }, -- Line number for when the 'relativenumber' option is set, below the cursor line
     -- CursorLineNr   { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -92,20 +92,20 @@ local theme = lush(function(injected_functions)
     -- CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line
     -- MatchParen     { }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg        {bg=hsl("#13c230"), fg=hsl("#000000")}, -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea        {bg=hsl("#000000"),fg=hsl("#ffffff") }, -- Area for messages and cmdline
+    MsgArea        {bg=hsl("#000000"),fg=hsl("#d0baba") }, -- Area for messages and cmdline
     -- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg        { }, -- |more-prompt|
     -- NonText        { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal         {bg=hsl("#000000"),fg=hsl("#ffffff")}, -- Normal text
+    Normal         {bg=hsl("#03021d"),fg=hsl("#d0baba")}, -- Normal text
     -- NormalFloat    { }, -- Normal text in floating windows.
     -- FloatBorder    { }, -- Border of floating windows.
     -- FloatTitle     { }, -- Title of floating windows.
     -- NormalNC       { }, -- normal text in non-current windows
-    -- Pmenu          { }, -- Popup menu: Normal item.
-    -- PmenuSel       { }, -- Popup menu: Selected item.
+    Pmenu          {bg=hsl("#080637") }, -- Popup menu: Normal item.
+    PmenuSel       {bg=hsl("#140066") }, -- Popup menu: Selected item.
     -- PmenuKind      { }, -- Popup menu: Normal item "kind"
     -- PmenuKindSel   { }, -- Popup menu: Selected item "kind"
-    -- PmenuExtra     { }, -- Popup menu: Normal item "extra text"
+    -- PmenuExtra     { }, -- Popup MatchParenu: Normal item "extra text"
     -- PmenuExtraSel  { }, -- Popup menu: Selected item "extra text"
     -- PmenuSbar      { }, -- Popup menu: Scrollbar.
     -- PmenuThumb     { }, -- Popup menu: Thumb of the scrollbar.
@@ -146,15 +146,15 @@ local theme = lush(function(injected_functions)
     String         {fg=hsl("#13c230")}, --   A string constant: "this is a string"
     Character      {fg=hsl("#fa3c0f") }, --   A character constant: 'c', '\n'
     Number         {fg=hsl("#7717ed") }, --   A number constant: 234, 0xff
-    Boolean        {fg=hsl("#04086c") }, --   A boolean constant: TRUE, false
+    Boolean        {fg=hsl("#8f47ed") }, --   A boolean constant: TRUE, false
     -- Float          { }, --   A floating point constant: 2.3e10
 
     Identifier     {fg=hsl("#3dd8ff") }, -- (*) Any variable name
     Function       {fg=hsl("#09c9ff") }, --   Function name (also: methods for classes)
 
-    -- Statement      { }, -- (*) Any statement
+    Statement      {fg=hsl("#3dd8ff") }, -- (*) Any statement
     -- Conditional    { }, --   if, then, else, endif, switch, etc.
-    -- Repeat         { }, --   for, do, while, etc.
+    -- Repeat      { }, --   for, do, while, etc.
     -- Label          { }, --   case, default, etc.
     -- Operator       { }, --   "sizeof", "+", "*", etc.
     -- Keyword        { }, --   any other keyword
