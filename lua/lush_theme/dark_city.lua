@@ -43,6 +43,7 @@
 --  `:lua require('lush').ify()`
 
 local lush = require('lush')
+local colors = require('lush_theme.colors')
 local hsl = lush.hsl
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
@@ -68,7 +69,7 @@ local theme = lush(function(injected_functions)
     -- lCursor        { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM       { }, -- Like Cursor, but used when in IME mode |CursorIM|
     --CursorColumn   {}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine     { bg=hsl("#140066")}, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLine     { bg=colors.faded_blue}, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     -- Directory      { }, -- Directory names (and other special names in listings)
     -- DiffAdd        { }, -- Diff mode: Added line |diff.txt|
     -- DiffChange     { }, -- Diff mode: Changed line |diff.txt|
@@ -84,7 +85,7 @@ local theme = lush(function(injected_functions)
     -- SignColumn     { }, -- Column where |signs| are displayed
     -- IncSearch      { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute     { }, -- |:substitute| replacement text highlighting
-    LineNr         {bg=hsl("#03021d")}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr         {bg=colors.dark_blue}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNrAbove    { }, -- Line number for when the 'relativenumber' option is set, above the cursor line
     -- LineNrBelow    { }, -- Line number for when the 'relativenumber' option is set, below the cursor line
     -- CursorLineNr   { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -96,13 +97,13 @@ local theme = lush(function(injected_functions)
     -- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg        { }, -- |more-prompt|
     -- NonText        { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal         {bg=hsl("#03021d"),fg=hsl("#d0baba")}, -- Normal text
+    Normal         {bg=colors.dark_blue,fg=hsl("#d0baba")}, -- Normal text
     -- NormalFloat    { }, -- Normal text in floating windows.
     -- FloatBorder    { }, -- Border of floating windows.
     -- FloatTitle     { }, -- Title of floating windows.
     -- NormalNC       { }, -- normal text in non-current windows
-    Pmenu          {bg=hsl("#080637") }, -- Popup menu: Normal item.
-    PmenuSel       {bg=hsl("#140066") }, -- Popup menu: Selected item.
+    Pmenu          {bg=colors.dark_purple}, -- Popup menu: Normal item.
+    PmenuSel       {bg=hsl("#27122b") }, --Popup menu: Selected item.
     -- PmenuKind      { }, -- Popup menu: Normal item "kind"
     -- PmenuKindSel   { }, -- Popup menu: Selected item "kind"
     -- PmenuExtra     { }, -- Popup MatchParenu: Normal item "extra text"
